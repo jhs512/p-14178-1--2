@@ -1,47 +1,47 @@
 # Issue tracker
 
-Issues for this repo are tracked as **local markdown files** under `.scratch/`.
+이 repo의 이슈는 `.scratch/` 하위 **로컬 마크다운 파일**로 추적한다.
 
-## Where issues live
+## 이슈 위치
 
-Each feature or work-stream gets a directory:
+기능(feature) 또는 작업 단위마다 디렉터리 하나:
 
 ```
 .scratch/<feature-slug>/
 ```
 
-Within it, each issue is a numbered markdown file:
+그 안에 번호를 붙인 마크다운 파일로 이슈를 둔다:
 
 ```
 .scratch/<feature-slug>/001-<issue-slug>.md
 .scratch/<feature-slug>/002-<issue-slug>.md
 ```
 
-## Issue file format
+## 이슈 파일 형식
 
-Each issue file starts with frontmatter and a body:
+각 이슈 파일은 frontmatter + 본문으로 시작한다:
 
 ```markdown
 ---
-title: <one-line title>
-state: needs-triage      # or any label from docs/agents/triage-labels.md
+title: <한 줄 제목>
+state: needs-triage      # docs/agents/triage-labels.md 의 라벨 중 하나
 labels: []
 ---
 
 ## Context
 
-<why this issue exists>
+<이 이슈가 존재하는 이유>
 
 ## Acceptance criteria
 
 - [ ] ...
 ```
 
-## Operations
+## 작업(Operations)
 
-- **Create**: write a new numbered file in the feature directory
-- **List**: read the files under `.scratch/<feature-slug>/`
-- **Update state**: edit the `state:` field in the frontmatter
-- **Close**: set `state:` to a terminal label (e.g. `wontfix` or `done`)
+- **생성**: 기능 디렉터리에 번호 붙인 새 파일 작성
+- **목록**: `.scratch/<feature-slug>/` 하위 파일 읽기
+- **상태 변경**: frontmatter 의 `state:` 필드 편집
+- **종료**: `state:` 를 종료 라벨(예: `wontfix` 또는 `done`)로 설정
 
-When asked to "create an issue", default to this layout unless the user specifies otherwise.
+"이슈 생성" 요청 시 사용자가 다르게 지정하지 않는 한 이 레이아웃을 기본으로 쓴다.
